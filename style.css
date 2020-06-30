@@ -1,0 +1,301 @@
+@font-face {
+    src: url(fonts/TESLA.ttf);
+    font-family: tesla;
+}
+
+html {
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "left center right" ;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 52px; 
+  
+   
+    
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+header a:hover {
+    transition: color 0.4s ease-out;
+    color: gray;
+}
+
+/* Left Nav Controls */
+
+
+.header .logo-left {
+    grid-area: left;
+    padding: 0;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.header .logo-left a {
+    font-family: tesla;
+    font-weight: lighter;
+    font-size: 1rem;
+    letter-spacing: 0.4rem;
+}
+
+/* Nav Center Controls */
+
+.nav-center {
+    grid-area: center;
+    text-align: center;
+    padding: 0;
+}
+
+.nav-center li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* Right Div Controls */
+
+.div-right {
+    grid-area: right;
+    text-align: right;
+    
+}
+
+.div-right .nav-right {
+    display: inline-block;
+}
+
+.div-right .nav-right li {
+    display: inline;
+    padding: 0 10px;
+}
+
+.div-right .menu-btn {
+    display: inline-block;
+    padding: 0 25px;
+
+}
+
+/* Creates Hamburger Nav  */
+
+.div-right .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    top: 8px;
+
+    padding: 12px 25px;  
+}
+
+.div-right .menu-icon .nav-icon {
+    height: 2px;
+    width: 15px;
+    background:white;
+    position: relative;
+    display: block;
+    transition: background 0.2s ease-out
+}
+
+.div-right .menu-icon .nav-icon:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    display: block;
+    top: -5px;
+    transition: 0.2s ease-in;
+}
+
+.div-right .menu-icon .nav-icon:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    display: block;
+    top: 5px;
+    transition: 0.2s ease-in;
+
+}
+
+
+/* Creats X when Hamburger is Clicked On */
+
+.div-right .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+
+
+.div-right .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(45deg);
+    top: 0;
+    
+
+}
+
+.div-right .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(-45deg);
+    top: 0;
+
+}
+
+
+
+/* Drop Down Menu Controls */
+
+.div-right .menu-btn {
+    display: none;
+}
+
+
+
+.div-right .menu {
+  
+    list-style: none;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    width: 312px;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    margin-top: 2px;
+    position: absolute;
+    right: 0;
+
+    z-index: 3;
+}
+
+.div-right .menu li {
+    padding: 20px 10px;
+    margin: 0 12px;
+    text-align: left;
+    border-bottom: lightgray solid 1px;
+    
+    
+}
+
+
+.div-right .menu a {
+    color: black;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+}
+
+.div-right .menu-btn:checked ~ .menu {
+    max-height: 1000px;
+}
+
+
+/* Hero Image Controls - TOP */
+
+.img-container {
+    background: url(models.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.inner-container {
+    text-align: center;
+    position: relative;
+    top: 4.5rem;
+    height: 75%;
+}
+
+.inner-container a, h1 , h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    
+}
+
+.inner-container h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 3.0rem;
+}
+
+.inner-container .hero-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    color: black;
+    border: 2px black solid;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+  
+    transition: all 0.4s ease-out;
+
+}
+
+
+.inner-container .hero-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+
+/* Hero Image Controls - BOTTOM */
+
+.img-container .boxes {
+    display: grid;
+    grid-template-columns: 10rem 10rem 10rem;
+    position: relative;
+   
+    text-align: center;
+    justify-content: center;
+
+}
+
+.img-container .boxes h2 {
+    color: black;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+}
+
+.img-container .boxes p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-top: 5px;
+    
+    
+}
+
+.box-2{
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+
+}
+
+.box-1 h2, .box-1 i {
+    display: inline-block;
+    
+}
+
+
+
+
+
